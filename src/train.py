@@ -5,10 +5,19 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score, classification_report
+from pathlib import Path
+import json
+import joblib
+import argparse
+
+
 
 
 
 def main() -> None:
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--data", )
 
     df = pd.read_csv("data/healthcare_patient_journey.csv")
 
@@ -46,6 +55,20 @@ def main() -> None:
 
     print("\nROC-AUC:", roc_auc_score(y_test, y_proba))
     print("\nClassification report:\n", classification_report(y_test, y_pred))
+
+    models_dir = Path("models")
+    models_dir.mkdir(parents=True, exist_ok=True)
+
+    joblib.dump(clf, models_dir / "baseline_logreg.joblib")
+    metrics = {
+        "roc_auc": float(roc_auc_score(y_test, y_proba)),
+        "test_size": 0.1,
+        "random_state": 42,
+        "n_samples": len(df),
+    }
+
+    with open(models_dir / "metrics.json", "w") as f:
+        json.dump(metrics, f, indent=2)
 
 
 if __name__ == "__main__":
