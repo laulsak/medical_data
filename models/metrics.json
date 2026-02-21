@@ -1,0 +1,6 @@
+{
+  "roc_auc": 0.6985714285714285,
+  "test_size": 0.1,
+  "random_state": 42,
+  "n_samples": 3000
+}
