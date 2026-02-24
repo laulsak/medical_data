@@ -1,1 +1,14 @@
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
 
+# mac
+.DS_Store
+
+# model artifacts
+models/
+
+# local data outputs (optional)
+data/predictions*.csv
