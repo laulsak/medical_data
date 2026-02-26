@@ -1,7 +1,7 @@
-This project builds a machine learning model to predict whether a patient will be readmitted within 30 days after discharge using a synthetic healthcare dataset. It's a binary classification task focused on improving recall to minimize false negatives (missed admissions), which can be costly in healthcare.
+This project builds a machine learning model to predict whether a patient will be readmitted within 30 days after discharge using a synthetic healthcare dataset. It's a binary classification task focused on improving recall to minimize false negatives (missed readmissions), which can be costly in healthcare.
 
 
-##Project Overview
+## Project Overview
 - **Problem**: Binary classification to predict whether patient is readmitted within 30 days back to hospital. (0: No, 1: Yes).
 
 - **Dataset**: Synthetic data with 3000 samples (approx 23% positive class, imbalanced). Features include age, gender, chronic conditions, admission type, etc.
