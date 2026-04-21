@@ -11,15 +11,15 @@ This project builds a machine learning model to predict whether a patient will b
 - **Key Insights**: Linear models like logistic regression perform well. Class weighting improves recall without sacrificing much accuracy.
 
 ## Methods
-- **Preprocessing**: Used 'ColumnTransformer' and 'Pipeline' for one-hot encoding categorical features (for example gender and department) and passthrough for numerics. Prevents data leakage.
+- **Preprocessing**: Used `ColumnTransformer` and `Pipeline` for one-hot encoding categorical features (for example gender and department) and passthrough for numerics. Prevents data leakage.
 
 - **Models Compared**: 
-    -Logistic regression (baseline, with 'class_weight="balanced"' for imbalance).
+    -Logistic regression (baseline, with `class_weight="balanced"` for imbalance).
     -Random Forest (for non-linearity check).
 
 - **Evaluation**: 5-fold cross-validation with ROC-AUC (robust for imbalanced data). Hold-out test set (10%) for final metrics.
 
-- **Handling Imbalance**: 'class_weight="balanced"' prioritizes minority class, improving recall for readmissions.
+- **Handling Imbalance**: `class_weight="balanced"` prioritizes minority class, improving recall for readmissions.
 
 
 ## Results
